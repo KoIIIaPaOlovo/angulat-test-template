@@ -1,0 +1,35 @@
+<tr>
+  <td class="button-wrap">
+    <button>Add Vacation</button>
+  </td>
+
+  <ng-container *ngFor="let i of Arr(this.getDaysAmount());index as index">
+    <td
+    class="weekend"
+    *ngIf="this.getDayName(index+1) == 'St' || this.getDayName(index+1) == 'Sn';else elseblock"
+    >
+        <p>
+          {{this.getDayName(index+1)}}
+        </p>
+        <p>
+          {{index+1}}
+        </p>
+    </td>
+    <ng-template #elseblock>
+      <td>
+        <p>
+          {{this.getDayName(index+1)}}
+        </p>
+        <p>
+          {{index+1}}
+        </p>
+      </td>
+    </ng-template>
+  </ng-container>
+
+
+  <td>Sum</td>
+</tr>
+
+
+

@@ -1,0 +1,58 @@
+<tr>
+  <td class="team-name">
+    TeamName
+  </td>
+
+  <ng-container *ngFor="let i of Arr(this.getDaysAmount());index as index">
+    <td
+    class="weekend"
+    *ngIf="this.getDayName(index+1) == 'St' || this.getDayName(index+1) == 'Sn';else elseblock"
+    >
+    </td>
+    <ng-template #elseblock>
+      <td>
+      </td>
+    </ng-template>
+  </ng-container>
+
+  <td>Sum</td>
+</tr>
+<tr>
+  <td class="team-name">
+    TeamMember
+  </td>
+
+  <ng-container *ngFor="let i of Arr(this.getDaysAmount());index as index">
+    <td
+    class="weekend"
+    *ngIf="this.getDayName(index+1) == 'St' || this.getDayName(index+1) == 'Sn';else elseblock"
+    >
+    </td>
+    <ng-template #elseblock>
+      <td>
+      </td>
+    </ng-template>
+  </ng-container>
+
+  <td>Sum</td>
+</tr>
+
+<tr *ngFor="let member of this.members;index as index">
+  <td class="team-name">
+    {{member.name}}
+  </td>
+
+  <ng-container *ngFor="let i of Arr(this.getDaysAmount());index as index">
+    <td
+    class="weekend"
+    *ngIf="this.getDayName(index+1) == 'St' || this.getDayName(index+1) == 'Sn';else elseblock"
+    >
+    </td>
+    <ng-template #elseblock>
+      <td>
+      </td>
+    </ng-template>
+  </ng-container>
+
+  <td>Sum</td>
+</tr>
